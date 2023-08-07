@@ -24,22 +24,38 @@ const Contact = () => {
         </div>
         <div className="icon custom-letter-spacing custom-line-height lead pt-5 d-flex align-items-center justify-content-center">
           <div className="social-hover pe-4 fs-3">
-            <a href="https://www.instagram.com/naitik_bhavsar17/?igshid=ZDdkNTZiNTM%3D">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.instagram.com/naitik_bhavsar17/?igshid=ZDdkNTZiNTM%3D"
+            >
               <i className="bi bi-instagram text-custom "></i>
             </a>
           </div>
           <div className="social-hover pe-4 fs-3">
-            <a href="https://www.instagram.com/">
+            <a
+              href="https://www.instagram.com/"
+              rel="noreferrer"
+              target="_blank"
+            >
               <i className="bi bi-facebook text-primary "></i>
             </a>
           </div>
           <div className="social-hover pe-4 fs-3">
-            <a href="https://github.com/nikk-creador">
+            <a
+              href="https://github.com/nikk-creador"
+              rel="noreferrer"
+              target="_blank"
+            >
               <i className="bi bi-github text-dark"></i>
             </a>
           </div>
           <div className="social-hover pe-4 fs-3">
-            <a href="https://www.linkedin.com/in/naitik-bhavsar-b385051b0/">
+            <a
+              href="https://www.linkedin.com/in/naitik-bhavsar-b385051b0/"
+              rel="noreferrer"
+              target="_blank"
+            >
               <i className="bi bi-linkedin text-primary"></i>
             </a>
           </div>
