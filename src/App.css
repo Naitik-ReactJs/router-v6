@@ -4,7 +4,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-
 .custom-container {
   border-radius: 8px;
 }
@@ -79,7 +78,18 @@ a {
     letter-spacing: "0.2rem" !important;
   }
 }
-
+@media only screen and (max-width: 992px) {
+  .img-container {
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto !important;
+  }
+}
 p {
   text-align: justify;
+}
+
+.custom-spacing {
+  line-height: 3rem !important;
+  letter-spacing: 0.1rem;
 }

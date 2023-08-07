@@ -5,42 +5,35 @@ import "../App.css";
 import profile from "../img/animation.gif";
 const About = () => {
   return (
-    <Container
-      style={{ background: "white" }}
-      className="my-5 text-center  custom-container "
-    >
+    <Container style={{ background: "white" }} className="custom-container ">
       <Row>
-        <Col className="mb-4 text-center">
+        <Col className="m-4">
           <Heading heading="About " subhead="me" />
         </Col>
       </Row>
       <Row>
-        <Col className="d-flex flex-column align-items-center justify-content-center mb-5">
+        <Col
+          md={6}
+          className="d-flex flex-column align-items-center justify-content-center mb-5 img-container"
+        >
           <img
-            style={{ maxWidth: "70%" }}
+            style={{ maxWidth: "80%" }}
             src={profile}
-            className="img img-fluid"
+            className="img img-fluid d-none d-md-block"
             alt="My profile pic"
           />
         </Col>
-        <Col md>
-          <Row>
-            <Col>
-              <h2 className="lead fs-1">Front-End Developer</h2>
-            </Col>
-          </Row>
+        <Col>
           <Row>
             <Col>
               <p
-                className="p-5 align-items-start "
-                style={{
-                  letterSpacing: "0.1rem",
-                  lineHeight: "2rem",
-                }}
+                style={{ lineHeight: "1.8rem", letterSpacing: "0.1rem" }}
+                className="p-5 align-items-start"
               >
                 I'm{" "}
-                <h3 className="fw-bold" style={{ fontFamily: "Bungee Shade" }}>
-                  Naitik Bhavsar
+                <h3 style={{ fontFamily: "Bungee Shade" }}>Naitik Bhavsar</h3>{" "}
+                <h3 style={{ fontFamily: "Bungee Shade" }}>
+                  Front-End Developer
                 </h3>{" "}
                 passionate about cutting-edge technologies and creating visually
                 stunning interfaces. I believe in the power of exceptional user
@@ -54,7 +47,7 @@ const About = () => {
             <Col className="text-center">
               <button
                 variant="outline-secondary"
-                className="btn btn-outline-secondary p-3 mb-5"
+                className="btn btn-outline-secondary p-3 mb-3"
               >
                 <a
                   href="upload pdf here"

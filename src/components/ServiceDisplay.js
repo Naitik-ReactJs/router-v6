@@ -36,10 +36,7 @@ const ServiceDisplay = () => {
         <div className=" mt-3">
           <h4 className="text-dark">{title}</h4>
         </div>
-        <p
-          style={{ lineHeight: "1.8rem", letterSpacing: "0.1rem" }}
-          className="card-text text-dark lead fs-5 p-3"
-        >
+        <p className="card-text text-dark lead fs-5 p-3 custom-spacing">
           {description}
         </p>
       </div>
