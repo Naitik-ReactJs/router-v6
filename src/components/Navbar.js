@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   useEffect(() => {
     const className = "dark";
     if (isDarkMode) {
@@ -25,15 +25,17 @@ const Navbar = () => {
     storeItem(theme);
     document.body.dataset.theme = theme;
   }
-  useEffect(() => {
-    const className = "dark";
-    console.log(localStorage.getItem("Theme"));
-    if (localStorage.getItem("Theme")) {
-      window.document.body.classList.add(className);
-    } else {
-      window.document.body.classList.remove(className);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const className = "dark";
+  //   console.log(localStorage.getItem("Theme"));
+  //   if (localStorage.getItem("Theme")) {
+  //     window.document.body.classList.remove(className);
+  //   } else {
+  //     window.document.body.classList.add(className);
+  //   }
+
+  //   localStorage.clear();
+  // }, []);
 
   useEffect(() => {
     AOS.init();
