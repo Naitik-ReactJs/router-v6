@@ -93,3 +93,8 @@ p {
   line-height: 3rem !important;
   letter-spacing: 0.1rem;
 }
+
+body.dark {
+  background-color: #27374d;
+  color: #dde6ed;
+}

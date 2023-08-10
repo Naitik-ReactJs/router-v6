@@ -3,7 +3,38 @@ import { Link, NavLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 const Navbar = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    const className = "dark";
+    if (isDarkMode) {
+      window.document.body.classList.add(className);
+    } else {
+      window.document.body.classList.remove(className);
+    }
+  }, [isDarkMode]);
+
+  function storeItem(pref) {
+    localStorage.setItem("Theme", pref);
+  }
+
+  function handleToggle() {
+    const theme = !isDarkMode;
+    setIsDarkMode(theme);
+    storeItem(theme);
+    document.body.dataset.theme = theme;
+  }
+  useEffect(() => {
+    const className = "dark";
+    console.log(localStorage.getItem("Theme"));
+    if (localStorage.getItem("Theme")) {
+      window.document.body.classList.add(className);
+    } else {
+      window.document.body.classList.remove(className);
+    }
+  }, []);
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -36,10 +67,6 @@ const Navbar = () => {
     },
   ];
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const handleClick = () => {
-    setIsDarkMode((prevState) => !prevState);
-  };
   // dark mode button
   const navButton = useRef(null);
   const linksContainerRef = useRef(null);
@@ -58,7 +85,9 @@ const Navbar = () => {
           data-aos="zoom-in"
           to="/"
           className="navbar-brand mx-5"
-        >Naitik.dev</Link>
+        >
+          Naitik.dev
+        </Link>
         <button
           ref={navButton}
           className="navbar-toggler"
@@ -96,7 +125,17 @@ const Navbar = () => {
           <button
             type="button"
             className="btn btn-dark  ms-3 mx-5"
-            onClick={handleClick}
+            onClick={
+              (() => {
+                setIsDarkMode(!isDarkMode);
+              },
+              () => {
+                storeItem(isDarkMode);
+              },
+              () => {
+                handleToggle();
+              })
+            }
           >
             {isDarkMode ? (
               <i className="bi bi-brightness-high-fill"></i>

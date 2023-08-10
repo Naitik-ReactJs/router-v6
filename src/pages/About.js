@@ -5,7 +5,7 @@ import "../App.css";
 import profile from "../img/animation.gif";
 const About = () => {
   return (
-    <Container style={{ background: "white" }} className="custom-container ">
+    <Container className="custom-container ">
       <Row>
         <Col className="m-4">
           <Heading heading="About " subhead="me" />
