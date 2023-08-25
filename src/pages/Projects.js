@@ -10,7 +10,6 @@ const Projects = () => {
   const location = useLocation();
   const arr = Object.keys(projectList);
   const navigate = useNavigate();
-
   let [count, setCount] = useState(0);
   function handleClick() {
     setCount(count + 1);
@@ -31,37 +30,22 @@ const Projects = () => {
       <Outlet />
 
       <div className="container-fluid m-5">
-        {location.pathname === "/projects" ? (
-          <button
-            onClick={handleClickBack}
-            className="btn btn-danger disabled px-4 pt-2"
-          >
-            Back
-          </button>
-        ) : (
-          <button
-            onClick={handleClickBack}
-            className="btn btn-danger  px-4 pt-2"
-          >
-            Back
-          </button>
-        )}
+        <button
+          onClick={handleClickBack}
+          className="btn btn-danger  px-4 pt-2"
+          disabled={location.pathname === "/projects"}
+        >
+          Back
+        </button>
         {/* back button disabled when it is on projects page , using location.pathname */}
-        {count === arr.length ? (
-          <button
-            onClick={handleClick}
-            className="btn btn-primary ms-5 px-4 pt-2 disabled"
-          >
-            Next
-          </button>
-        ) : (
-          <button
-            onClick={handleClick}
-            className="btn btn-primary ms-5 px-4 pt-2"
-          >
-            Next
-          </button>
-        )}
+
+        <button
+          onClick={handleClick}
+          className="btn btn-primary ms-5 px-4 pt-2 "
+          disabled={count === arr.length}
+        >
+          Next
+        </button>
         {/* next button disabled when it is on last project, {count = arr.length } */}
       </div>
     </Container>
